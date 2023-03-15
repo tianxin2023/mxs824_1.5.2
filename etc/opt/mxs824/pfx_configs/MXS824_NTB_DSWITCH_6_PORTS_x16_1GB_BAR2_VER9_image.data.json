@@ -1,0 +1,12 @@
+{
+    "description": "D-Switch topology with up to 6 hosts with x16 links. The BAR2 size of all host ports is 1GB. In a D-Switch topology, all hosts are directly connected to the switch without an NTB host adapter.",
+    "group": "Standard",
+    "name": "D-Switch 6 hosts x16, 1GB BAR",
+    "ports": "6",
+    "protected": 1,
+    "speed": 3,
+    "topology": "D-Switch",
+    "type": "D-Switch",
+    "version": "9",
+    "width": "16"
+}

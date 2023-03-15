@@ -1,0 +1,12 @@
+{
+    "description": "Sub-switch 2 in a cascadable switch topology for up to 30 hosts with x16 host links. Ports 1-4 must be connected to port 5-8 of the TOP switch.",
+    "group": "Standard",
+    "name": "NTB cascade 30 ports x16 Sub-switch 2",
+    "ports": "30",
+    "protected": 1,
+    "speed": 3,
+    "topology": "Cascade x16",
+    "type": "NTB",
+    "version": "9",
+    "width": "16"
+}

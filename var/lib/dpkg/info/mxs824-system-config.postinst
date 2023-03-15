@@ -1,0 +1,126 @@
+#!/bin/bash
+
+#Grow rootfs to maximum size
+grow_rootfs() {
+    if [ -e /dev/mmcblk0 ]; then
+        parted /dev/mmcblk0 resizepart 3 -- -1
+        resize2fs /dev/mmcblk0p3
+    fi
+}
+
+#Use dpkg divert to ensure that upstream packages doesn't overwrite our configs
+divert_config() {
+    SYSCONFIG=$1
+    NEWCONFIG=$2
+
+    dpkg-divert --add --package mxs824-system-config --rename --divert \
+        ${SYSCONFIG}.orig ${SYSCONFIG}
+
+    if [ ! -e ${SYSCONFIG} ] || [ -L ${SYSCONFIG} ]; then
+        ln -sf ${NEWCONFIG} ${SYSCONFIG}
+    fi
+}
+
+#Set hostname based on serial if it's unset
+set_hostname() {
+    if [ -e /dev/mtd0 ] && [ "$(hostname)" = 'localhost' ]; then
+        SERIAL="$(fw_printenv | grep serialno | cut -d'=' -f 2)"
+        NUMSTR="$(echo $SERIAL | cut -f3 -d'-' )"
+        NUM="$(expr $NUMSTR + 0)"
+        hostnamectl set-hostname "MXS824-$NUM"
+    fi
+}
+
+create_hostsfile() {
+    cat > /etc/hosts <<EOF
+127.0.0.1	localhost
+127.0.0.1	$( hostname )
+
+# The following lines are desirable for IPv6 capable hosts
+::1	localhost ip6-localhost ip6-loopback
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+EOF
+}
+
+fixup_ssh() {
+    #Regenerate host keys if needed
+    numKeys=0;
+
+    for i in /etc/ssh/ssh_host_*; do
+        numKeys=$(( $numKeys + 1 ));
+    done;
+
+    if [ "$numKeys" -lt '6' ]; then
+        echo "Regenerating host keys"
+        rm -f /etc/ssh/ssh_host_*
+        dpkg-reconfigure -fnoninteractive openssh-server
+    fi
+}
+
+setup_nginx() {
+    if [ ! -s /etc/nginx/dhparam.pem ] ;then
+        echo "Generating dhparam.pem"
+        /usr/bin/openssl dhparam -out /etc/nginx/dhparam.pem 1024
+    fi
+
+    if [ ! -s /etc/ssl/certs/nginx-selfsigned.crt ] || [ ! -s /etc/ssl/private/nginx-selfsigned.key ]; then
+        echo "Generating self-signed certificate"
+
+        subj="/C=NO/ST=Oslo/O=Dolphin Interconnect Solutions/localityName=Oslo/commonName=mxs824.dolphinics.com/emailAddress=pci-support@dolphinics.com"
+
+        /usr/bin/openssl req -x509 -nodes -days 36525 -newkey \
+            rsa:2048 -batch -subj "$subj" -keyout \
+            /etc/ssl/private/nginx-selfsigned.key -out \
+            /etc/ssl/certs/nginx-selfsigned.crt
+    fi
+}
+
+setup_ntp() {
+    if [ ! -d '/usr/lib/systemd/timesyncd.conf.d' ]; then
+        mkdir '/usr/lib/systemd/timesyncd.conf.d'
+    fi
+
+    if [ ! -f '/usr/lib/systemd/timesyncd.conf.d/30-mxsntp.conf' ]; then
+        echo -e '[Time]\nNTP=pool.ntp.org\n' > '/usr/lib/systemd/timesyncd.conf.d/30-mxsntp.conf'
+        /usr/bin/timedatectl set-timezone 'UTC'
+        systemctl restart systemd-timesyncd
+    fi
+
+    chown root:mxs824hw '/usr/lib/systemd/timesyncd.conf.d/30-mxsntp.conf'
+    chmod 664 '/usr/lib/systemd/timesyncd.conf.d/30-mxsntp.conf'
+}
+
+grow_rootfs
+
+divert_config "/etc/ssh/sshd_config" "/etc/opt/ssh/sshd_config"
+
+set_hostname
+create_hostsfile
+
+#Disable default site installed by upstream nginx package
+[ -L "/etc/nginx/sites-enabled/default" ] && rm "/etc/nginx/sites-enabled/default"
+
+# Program some hardware stuff
+/opt/ltc3887/ltc3887 /opt/ltc3887/mxs824_ltc.txt
+/opt/tps544c20/tps544c20 /opt/tps544c20/mxs824_tps.csv
+
+fixup_ssh
+
+setup_nginx
+
+setup_ntp
+
+# We've installed new udev rules, apply them
+udevadm trigger
+
+#Setup permissions to fw_printenv
+chown root:mxs824hw /var/lock/fw_printenv.lock
+chmod 660 /var/lock/fw_printenv.lock
+
+# Allow node app to read current apt repo
+chmod 444 /etc/apt/sources.list.d/*.list
+
+systemctl daemon-reload
+systemctl start sshd || true
+systemctl restart nginx || true

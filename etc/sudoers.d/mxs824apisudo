@@ -1,0 +1,11 @@
+mxs824api ALL = (root) NOPASSWD:SETENV: /sbin/modprobe
+mxs824api ALL = (root) NOPASSWD:SETENV: /usr/bin/apt-get
+mxs824api ALL = (root) NOPASSWD:SETENV: /usr/bin/dpkg
+mxs824api ALL = (root) NOPASSWD:SETENV: /usr/bin/fw_printenv
+mxs824api ALL = (root) NOPASSWD:SETENV: /bin/systemctl
+mxs824api ALL = (root) NOPASSWD:SETENV: /usr/bin/timedatectl
+mxs824api ALL = (root) NOPASSWD:SETENV: /sbin/reboot
+mxs824api ALL = (root) NOPASSWD:SETENV: /sbin/shutdown
+mxs824api ALL = (root) NOPASSWD:SETENV: /sbin/poweroff
+mxs824api ALL = (root) NOPASSWD:SETENV: /usr/bin/hostnamectl
+mxs824api ALL = (root) NOPASSWD:SETENV: /opt/apt/change_repo.sh

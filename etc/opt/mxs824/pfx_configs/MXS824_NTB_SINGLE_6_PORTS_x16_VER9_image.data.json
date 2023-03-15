@@ -1,0 +1,12 @@
+{
+    "description": "Single switch topology for up to 6 hosts with x16 links.",
+    "group": "Standard",
+    "name": "NTB 6 ports x16",
+    "ports": "6",
+    "protected": 1,
+    "speed": 3,
+    "topology": "Single",
+    "type": "NTB",
+    "version": "9",
+    "width": "16"
+}

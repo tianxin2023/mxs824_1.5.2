@@ -1,0 +1,5 @@
+image_name: sdcard-factory-mxs824_1.5.2.img
+hostname: runner-edc7y6xj-project-100-concurrent-0
+git_ref: f2bcc604420cdce6024480bf71d9215b394511b5
+pipeline: 16123
+job: 2349456

@@ -1,0 +1,7 @@
+[
+    {
+        "id": 1,
+        "username": "admin",
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$hNPb5+uTKqg4Z8+MaW/oCg$JPifc7cyLuYgfAb8KIvbepfppmuOkjawaJ+qw4due/A"
+    }
+]

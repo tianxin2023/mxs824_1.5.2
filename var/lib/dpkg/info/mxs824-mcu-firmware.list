@@ -1,0 +1,14 @@
+/.
+/etc
+/etc/opt
+/etc/opt/mxs824
+/etc/opt/mxs824/stm
+/etc/opt/mxs824/stm/mxs824b-stm.bin
+/opt
+/opt/mcu
+/opt/mcu/burn-stm.js
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/mxs824-mcu-firmware
+/usr/share/doc/mxs824-mcu-firmware/changelog.gz

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+upgrade_stm() {
+    if [ -e /dev/mtd0 ] ; then
+        serial=$( fw_printenv serialno | cut -f2 -d'=' | tr -d '\n' )
+        node /opt/mcu/burn-stm.js '/etc/opt/mxs824/stm/mxs824b-stm.bin' "$serial" "$( hostname )"
+    fi
+}
+
+upgrade_stm

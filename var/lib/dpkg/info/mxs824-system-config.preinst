@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#Add a group that can access various hardware interfaces
+addgroup --system mxs824hw
+
+debconf-set-selections << EOF
+debconf debconf/frontend select Noninteractive
+
+# Force debconf priority to critical.
+debconf debconf/priority select critical
+
+debconf libssl1.1/restart-services select true
+debconf libssl1.0.0/restart-services select true
+
+debconf libraries/restart-without-asking select true
+
+debconf tzdata/Zones/Etc select UTC
+debconf tzdata/Areas select Etc
+
+debconf apt-listchanges/headers select false
+debconf apt-listchanges/confirm select false
+debconf apt-listchanges/save-seen select true
+debconf apt-listchanges/email-format select text
+debconf apt-listchanges/frontend select none
+debconf apt-listchanges/no-network select false
+debconf apt-listchanges/which select both
+debconf apt-listchanges/reverse select false
+debconf apt-listchanges/email-address select root
+EOF
+

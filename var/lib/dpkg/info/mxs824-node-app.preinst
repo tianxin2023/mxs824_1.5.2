@@ -1,0 +1,59 @@
+#!/bin/sh
+
+
+before_upgrade() {
+    :
+#!/bin/bash
+
+stop_service() {
+    systemctl daemon-reload
+    systemctl stop mxs824 || true
+
+}
+
+keep_old_settings() {
+    # Upgrade scenario where user haven't changed any default config.
+    # This preserves the active PFX configuration and other un-modified
+    # previous default settings.
+    if [ ! -f "/etc/opt/mxs824/api-custom.json" ]; then
+        if [ -f "/etc/opt/mxs824/api-default.json" ]; then
+            cp -f "/etc/opt/mxs824/api-default.json" "/etc/opt/mxs824/api-custom.json"
+            /bin/chmod 664 /etc/opt/mxs824/api-custom.json
+        fi
+    fi
+}
+
+#Make sure the nodejs backend is stopped before we upgrade it
+stop_service
+
+keep_old_settings
+
+}
+
+before_install() {
+    :
+#!/bin/bash
+
+
+}
+
+if [ "${1}" = "install" -a -z "${2}" ]
+then
+    before_install
+elif [ "${1}" = "upgrade" -a -n "${2}" ]
+then
+    upgradeFromVersion="${2}"
+    before_upgrade "${upgradeFromVersion}"
+elif [ "${1}" = "install" -a -n "${2}" ]
+then
+    upgradeFromVersion="${2}"
+    # Executed when a package is removed but its config files aren't,
+    # and a new version is installed.
+    # Looks a _lot_ like an upgrade case, I say we just execute the
+    # same "before upgrade" script as in the previous case
+    before_upgrade "${upgradeFromVersion}"
+elif echo "${1}" | grep -E -q '(fail|abort)'
+then
+    echo "Failed to install before the pre-installation script was run." >&2
+    exit 1
+fi

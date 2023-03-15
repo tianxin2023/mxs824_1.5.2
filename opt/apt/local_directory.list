@@ -1,0 +1,2 @@
+#This is the local repo containing debs from custom branch
+deb file:/root/mxs824-mirror/ bionic main

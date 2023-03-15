@@ -1,0 +1,1 @@
+62900bc2203818bc366b0de29cc01fed35467acf0a9237fa5d6fea8ebbd1eea0  ../../sdimages/mxs824rfs_tiny2.0b.img.xz

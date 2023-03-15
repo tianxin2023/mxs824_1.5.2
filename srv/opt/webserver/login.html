@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>MXS824 Log in</title>
+
+    <link rel="stylesheet" href="main.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script src="common.js"></script>
+    <script src="popup.js"></script>
+    <script src="login.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="logo">
+            <img src="./img/dolphin-logo.png" alt="Dolphin ICS Logo" />
+        </div>
+        <div class="separator"></div>
+        <div>
+            <h1>MXS824</h1>
+        </div>
+    </div>
+    <div id="content">
+        <noscript>JavaScript is disabled or unavailable in this browser. Please enable JavaScript or change browser to proceed.</noscript>
+        <div class="section">
+            <div class="rtable--2cols">
+                <div class="sectiontable">
+                    <h2><span class="ns-serial">MXS824</span> Log In</h2>
+                    <form>
+                        <strong>Username</strong>
+                        <input id="usr" type="email" name="user" />
+                        <strong>Password</strong>
+                        <input id="pwd" type="password" name="password" />
+                        <input id="submit" type="submit" name="submit" disabled="disabled" value="Log in" />
+                    </form>
+                    <p class="center smaller">Copyright (C) 2018 - 2020 Dolphin Interconnect Solutions</p>
+                    <p class="center smaller"><a href="/licenses.html">Third party licence information</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        main();
+    </script>
+</body>
+</html>

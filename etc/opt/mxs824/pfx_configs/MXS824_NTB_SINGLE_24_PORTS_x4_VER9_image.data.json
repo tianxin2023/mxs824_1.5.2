@@ -1,0 +1,12 @@
+{
+    "description": "Single switch topology for up to 24 hosts with x4 links.",
+    "group": "Standard",
+    "name": "NTB 24 ports x4",
+    "ports": "24",
+    "protected": 1,
+    "speed": 3,
+    "topology": "Single",
+    "type": "NTB",
+    "version": "9",
+    "width": "4"
+}

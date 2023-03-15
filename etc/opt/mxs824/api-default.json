@@ -1,0 +1,135 @@
+{
+    "port": 8210,
+    "loginAttempts": 5,
+    "loginBlockMs": 900000,
+    "sessionTimeSeconds": 1209600,
+    "activeConfig": {
+        "group": "Standard",
+        "type": "NTB",
+        "protected": 1,
+        "width": 16,
+        "speed": 3,
+        "version": 9,
+        "ports": 6,
+        "topology": "Single",
+        "name": "NTB 6 ports x16",
+        "file": "MXS824_NTB_SINGLE_6_PORTS_x16_VER9_image.data",
+        "description": "Single switch topology for up to 6 hosts with x16 links.",
+        "checksum": "394f0184444aba1131902f36242ea47f2a77eca241fbcaec68086a6bc65f7ef9"
+    },
+    "network": {
+        "ip4": {
+            "type": 0,
+            "address": [ "192.168.1.210" ],
+            "netmask": [ "255.255.255.0" ],
+            "gateway": [ "192.168.1.1" ],
+            "domain": [],
+            "dns": [ "192.168.1.1" ]
+        },
+        "ip6": {
+            "type": 0,
+            "address": [ "fc00::210/64" ],
+            "gateway": [ "fc00::1" ],
+            "domain": [],
+            "dns": [ "fc00::1" ]
+        },
+        "ntp": {
+            "timezone": "UTC",
+            "servers": [ "pool.ntp.org" ]
+        }
+    },
+    "apt": {
+        "active": 0,
+        "channels": [
+            {
+                "name": "Stable channel",
+                "url": "http://mxs824apt.dolphinics.com"
+            },
+            {
+                "name": "Beta channel",
+                "url": "http://mxs824apt.dolphinics.com,http://mxs824apt.dolphinics.com/master"
+            },
+            {
+                "name": "Internal development",
+                "url": "http://repo.dolphinics.no/apt/mxs824master",
+                "hidden": 1
+            },
+            {
+                "name": "Custom",
+                "url":  "",
+                "hidden": 1,
+                "modify":  1
+            }
+        ]
+    },
+    "thresholds": {
+        "fan": {
+            "rpm": 8000,
+            "hys": 600
+        },
+        "temp": {
+            "cpu": {
+                "min": 3,
+                "warn": 90,
+                "max": 100
+            },
+            "pfx": {
+                "min": 3,
+                "warn": 90,
+                "max": 100
+            },
+            "max31": {
+                "min": 3,
+                "warn": 50,
+                "max": 65
+            },
+            "ltc38": {
+                "min": 3,
+                "warn": 75,
+                "max": 100
+            },
+            "coil1": {
+                "min": 3,
+                "warn": 100,
+                "max": 120
+            },
+            "coil2": {
+                "min": 3,
+                "warn": 100,
+                "max": 120
+            }
+        },
+        "power": {
+            "12v": {
+                "voltage": {
+                    "vol": 12.0,
+                    "hys": 2.0
+                },
+                "current": {
+                    "vol": 6.5,
+                    "hys": 6.0
+                }
+            },
+            "9v": {
+                "voltage": {
+                    "vol": 0.9,
+                    "hys": 0.05
+                },
+                "current": {
+                    "vol": 22.0,
+                    "hys": 16.0
+                }
+            },
+            "3v": {
+                "voltage": {
+                    "vol": 3.3,
+                    "hys": 0.2
+                },
+                "current": {
+                    "vol": 10.5,
+                    "hys": 10.0
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,3 @@
+
+#boot partition
+/dev/mmcblk0p2  /boot   ext4    defaults    1 2

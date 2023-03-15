@@ -1,0 +1,9 @@
+[Unit]
+Description=MXS824 Self installer
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /opt/mxs824/setup.sh
+
+[Install]
+WantedBy=multi-user.target

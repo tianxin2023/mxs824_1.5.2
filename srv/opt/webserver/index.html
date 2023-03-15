@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>MXS824</title>
+
+    <link rel="stylesheet" href="main.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script src="common.js"></script>
+    <script src="popup.js"></script>
+    <script src="draw.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="logo">
+            <a href="#home"><img src="./img/dolphin-logo.png" alt="Dolphin ICS Logo" /></a>
+        </div>
+        <div class="separator"></div>
+        <div>
+            <h1>MXS824</h1>
+        </div>
+        <div id="topmenu">
+            <ul><li><a href="#status">Status</a></li><li><a href="#PCIe">PCIe</a></li><li><a href="#system">System</a></li></ul>
+        </div>
+        <div id="rightmenu">
+            <ul><li><a class="warning" href="javascript:void(0);" title="No warnings"></a></li><li><a href="javascript:void(0);" id="logout" title="Log out"><img src="img/logout.svg" alt="Log out" /></a></li></ul>
+        </div>
+    </div>
+    <div id="content">
+        <noscript>JavaScript is disabled or unavailable in this browser. Please enable JavaScript or change browser to proceed.</noscript>
+
+        <div id="home">
+            <h1 class="welcome">MXS824 24 Port Gen3 Switch</h1>
+            <div class="section">
+                <div class="rtable--2cols valign">
+                    <div class="ns-serial"></div>
+                    <div>Management version: <span class="ns-version"></span></div>
+                </div>
+                <div class="center">
+                    <h2>Port status</h2>
+                    <canvas class="switch-gfx"></canvas>
+                </div>
+                <div class="rtable--3cols valign">
+                    <div><strong>Hostname</strong><br /><span class="ns-hostname">-</span></div>
+                    <div><strong>Uptime</strong><br /><span class="ns-uptime smaller">-</span></div>
+                    <div><strong>IP</strong><br /><span class="ns-ip">-</span></div>
+                </div>
+            </div>
+        </div>
+        <div id="status" class="section">
+            <h1>Status</h1>
+
+            <div class="rtable--1cols sectiontable">
+                <h2>Port status</h2>
+                <div><canvas class="switch-gfx"></canvas></div>
+            </div>
+
+            <div class="rtable--2cols">
+                <div class="sectiontable">
+                    <h2>System</h2>
+
+                    <div class="rtable--2cols valign datatable">
+                        <div>Hostname</div>
+                        <div class="ns-hostname">-</div>
+                        <hr />
+                        <div>Serial number</div>
+                        <div class="ns-serial"></div>
+                        <hr />
+                        <div>Date</div>
+                        <div class="ns-date smaller"></div>
+                        <hr />
+                        <div>Uptime</div>
+                        <div class="ns-uptime smaller"></div>
+                        <hr />
+                        <div>IP address</div>
+                        <div class="ns-ip"></div>
+                        <hr />
+                        <div>Netmask</div>
+                        <div class="ns-netmask"></div>
+                        <hr />
+                        <div>MAC</div>
+                        <div class="ns-mac"></div>
+                    </div>
+                </div>
+                <div class="sectiontable">
+                    <h2>Firmware</h2>
+                    <div class="rtable--2cols valign datatable">
+                        <div>Active PFX Configuration</div>
+                        <div class="ns-active-name">-</div>
+                        <hr />
+                        <div>Management version</div>
+                        <div class="ns-version"></div>
+                        <hr />
+                        <div>Kernel version</div>
+                        <div class="ns-version-kernel"></div>
+                        <hr />
+                        <div>Configuration version</div>
+                        <div class="ns-version-cfg"></div>
+                        <hr />
+                        <div>Server version</div>
+                        <div class="ns-version-app"></div>
+                        <hr />
+                        <div>GUI version</div>
+                        <div class="ns-version-gui"></div>
+                        <hr />
+                        <div>PFX version</div>
+                        <div class="ns-version-pfx"></div>
+                        <hr />
+                        <div>MCU version</div>
+                        <div class="ns-version-mcu"></div>
+                    </div>
+                </div>
+                <div class="sectiontable">
+                    <h2>Temperatures</h2>
+                    <div class="rtable--2cols valign datatable">
+                        <div>CPU</div>
+                        <div class="ns-temp-cpu"></div>
+                        <hr />
+                        <div>PFX</div>
+                        <div class="ns-temp-pfx"></div>
+                        <hr />
+                        <div>Fan controller</div>
+                        <div class="ns-temp-ext"></div>
+                        <hr />
+                        <div>0.9V regulator</div>
+                        <div class="ns-temp-coil3"></div>
+                        <hr />
+                        <div>0.9V ext. 1</div>
+                        <div class="ns-temp-09v"></div>
+                        <hr />
+                        <div>0.9V ext. 2</div>
+                        <div class="ns-temp-coil1"></div>
+                    </div>
+                </div>
+                <div class="sectiontable">
+                    <h2>Fans</h2>
+                    <div class="rtable--2cols valign datatable">
+                        <div>Fan 1</div>
+                        <div class="ns-fan-0"></div>
+                        <hr />
+                        <div>Fan 2</div>
+                        <div class="ns-fan-1"></div>
+                        <hr />
+                        <div>Fan 3</div>
+                        <div class="ns-fan-2"></div>
+                        <hr />
+                        <div>Fan 4</div>
+                        <div class="ns-fan-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="PCIe" class="section">
+            <h1>PCIe MXS824 Switch</h1>
+
+            <div class="rtable--2cols">
+                <div class="sectiontable">
+                    <h2>Configuration Management</h2>
+
+                    <p>Change the running configuration of the switch, or delete unused ones. Changing configuration will
+                    reset the PCIe switch, halting all traffic, and should not be done in a production environment.</p>
+
+                    <p><strong>Active configuration</strong></p>
+                    <div class="rtable--2cols f2575 valign smaller">
+                        <div>Name</div>
+                        <div class="ns-active-name">-</div>
+                        <div>File</div>
+                        <div class="ns-active-file">-</div>
+                        <div>Description</div>
+                        <div class="ns-active-desc">-</div>
+                        <div>Version</div>
+                        <div class="ns-active-ver">-</div>
+                        <div>Ports</div>
+                        <div class="ns-active-ports">-</div>
+                        <div>Width/Speed</div>
+                        <div class="ns-active-pcie">-</div>
+                        <div>Checksum</div>
+                        <div class="ns-active-hash smallest">-</div>
+                    </div>
+
+                    <form id="pfxUpdateAvail" class="hidden">
+                        <p><strong>New version available!</strong></p>
+                        <div>A new version of your current configuration is available
+                        <button>Update now!</button></div>
+                    </form>
+
+                    <p><strong>Manage configuration</strong></p>
+                    <form id="pfx-mgmt">
+                        <div class="rtable--2cols valign f2575">
+                            <div>Group</div>
+                            <div><select id="pfx-sel-group"><option value="-1">All</option></select></div>
+                            <div>Type</div>
+                            <div><select id="pfx-sel-type"><option value="-1">All</option></select></div>
+                            <div>Topology</div>
+                            <div><select id="pfx-sel-topology"><option value="-1">All</option></select></div>
+                            <div>Name</div>
+                            <div><select id="pfx-sel-name"><option value="-1">-</option></select></div>
+                        </div>
+                        <p><strong>Selected configuration</strong></p>
+                        <div class="rtable--2cols f2575 valign smaller">
+                            <div>File</div>
+                            <div class="ns-sel-file">-</div>
+                            <div>Description</div>
+                            <div class="ns-sel-desc">-</div>
+                            <div>Version</div>
+                            <div class="ns-sel-ver">-</div>
+                            <div>Ports</div>
+                            <div class="ns-sel-ports">-</div>
+                            <div>Width/Speed</div>
+                            <div class="ns-sel-pcie">-</div>
+                            <div>Protected</div>
+                            <div class="ns-sel-protected">-</div>
+                            <div>Checksum</div>
+                            <div class="ns-sel-hash smallest">-</div>
+                        </div>
+                        <div class="rtable--2cols">
+                            <div><button id="btn-burn" disabled="disabled">Change configuration</button></div>
+                            <div><button id="btn-delete">Delete configuration(s)</button></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="sectiontable">
+                    <h2>Upload Configuration</h2>
+
+                    <p>Upload a new configuration. This will be added to the &laquo;Custom&raquo; configuration group.
+                    Select a file first and we'll try to guess the following fields.</p>
+
+                    <form id="pfx-upload">
+                        <div class="rtable--2cols valign f2575">
+                            <div>File*</div>
+                            <div><input type="file" id="cfg-upload-file" accept=".data" /></div>
+                            <div>Type</div>
+                            <div><input type="text" id="cfg-upload-type" /></div>
+                            <div>Topology</div>
+                            <div><input type="text" id="cfg-upload-topology" /></div>
+                            <div>Name*</div>
+                            <div><input type="text" id="cfg-upload-name" /></div>
+                            <div>Version</div>
+                            <div><input type="text" id="cfg-upload-ver" /></div>
+                            <div>Ports</div>
+                            <div><input type="text" id="cfg-upload-ports" /></div>
+                            <div>Speed</div>
+                            <div><input type="text" id="cfg-upload-speed" /></div>
+                            <div>Width</div>
+                            <div><input type="text" id="cfg-upload-width" /></div>
+                            <div>Description</div>
+                            <div><textarea id="cfg-upload-desc"></textarea></div>
+                        </div>
+                        <button id="btn-upload" disabled="disabled">Upload</button>
+                    </form>
+                </div>
+                <div class="sectiontable">
+                    <h2>Reset Switch</h2>
+
+                    <p>Reset the PCIe switch. This will halt and interrupt all PCIe traffic and will cause a reload of the active configuration.</p>
+
+                    <form id="pfx-reset">
+                        <button>Reset</button>
+                    </form>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div id="system" class="section">
+            <h1>System Settings</h1>
+
+            <div class="rtable--2cols">
+                <div class="sectiontable">
+                    <h2>Update Firmware</h2>
+
+                    <p>
+                        Perform a firmware update of the management processor. This may update the management kernel, management backend, management GUI,
+                        system configuration, available PFX configurations and hardware firmware if updates are available. If the update includes new PFX
+                        configuration(s), the configuration will not be activated automatically. You need to select and change to the new configuration
+                        under the PCIe tab after the update has completed.
+                    </p>
+
+                    <p>Current firmware version: <span class="ns-version"></span></p>
+
+                    <p><strong>Network update</strong></p>
+
+                    <p>This will look for updates and allow you to upgrade the management processor if updates are available. Requires Internet access for the switch.</p>
+
+                    <form id="fw-auto-upgrade">
+                        <button>Check for updates</button>
+                    </form>
+
+                    <p><strong>Manual update</strong></p>
+
+                    <form id="fw-upgrade">
+                        <div class="rtable--2cols valign f2575">
+                            <div>File</div>
+                            <div><input type="file" name="cfg-file" accept=".zip"></div>
+                        </div>
+                        <button>Start update</button>
+                    </form>
+
+                    <h2>Update channel</h2>
+
+                    <p>Change active update channel. Note that this should only be done if instructed by Dolphin, and that you may not be able to downgrade back to the stable release.</p>
+
+                    <form id="fw-channel">
+                        <select name="channel">
+                            <option value="-1">-</option>
+                        </select>
+                        <input type="hidden" name="custom" value="" />
+                        <button>Apply</button>
+                    </form>
+                </div>
+                <div class="sectiontable">
+                    <h2>Hostname</h2>
+
+                    <p>Change the device hostname. Current hostname is <span class="ns-hostname">unknown</span>.</p>
+
+                    <form id="hostname">
+                        <div class="rtable--2cols valign f2575">
+                            <div>New hostname</div>
+                            <div><input type="text" name="new-hostname" /></div>
+                        </div>
+                        <button>Apply</button>
+                    </form>
+
+                    <h2>Admin Password</h2>
+
+                    <p>Change admin password for accessing the web interface. Please ensure you remember the new password. You currently need to contact Dolphin to reset the password.</p>
+
+                    <form id="admin-pwd">
+                        <div class="rtable--2cols valign f2575">
+                            <div><u>Current</u> password</div>
+                            <div><input type="password" name="admin-pwd-old" /></div>
+                            <div><u>New</u> password</div>
+                            <div><input type="password" name="admin-pwd" /></div>
+                            <div><u>Confirm</u> password</div>
+                            <div><input type="password" name="admin-pwd-cfg" /></div>
+                        </div>
+                        <button>Apply</button>
+                    </form>
+
+                    <!-- <h2>Factory reset</h2>
+
+                    <p>Restore the switch back to its default manufacturing configuration and settings. All user customizations and data will be lost. PCIe traffic will be interrupted during the process
+                    and you will be logged out of the management interface.</p>
+
+                    <form id="factory-reset">
+                        <button>Factory reset</button>
+					</form> -->
+                </div>
+                <div class="sectiontable">
+                    <h2>IPv4 Configuration</h2>
+                    <p>Modify the IPv4 configuration of the management processor. Use comma for multiple entries. Be careful or you may lose access to the device.</p>
+
+                    <p><strong>Current IPv4 Status</strong></p>
+                    <div class="rtable--2cols f2575 valign smaller">
+                        <div>IP</div>
+                        <div class="ns-ipv4">-</div>
+                        <div>Netmask</div>
+                        <div class="ns-netmaskv4">-</div>
+                    </div>
+
+                    <p><strong>Change IPv4 Settings</strong></p>
+
+                    <form id="ipv4-cfg">
+                        <div class="rtable--2cols valign f2575">
+                            <div>Configuration</div>
+                            <div>
+                                <select name="net-ip4-config">
+                                    <option value="0">Static IP (manual)</option>
+                                    <option value="1">DHCP (automatic)</option>
+                                    <option value="2">DHCP with static IP</option>
+                                </select>
+                            </div>
+                            <div>IPv4 address</div>
+                            <div><input type="text" name="net-ip4-address" /></div>
+                            <div>Netmask</div>
+                            <div><input type="text" name="net-ip4-mask" /></div>
+                            <div>Gateway</div>
+                            <div><input type="text" name="net-ip4-gateway" /></div>
+                            <div>DNS Domain</div>
+                            <div><input type="text" name="net-dns-domain" /></div>
+                            <div>DNS Server</div>
+                            <div><input type="text" name="net-dns-server" /></div>
+                        </div>
+                        <button>Apply</button>
+                    </form>
+                </div>
+                <div class="sectiontable">
+                    <h2>IPv6 Configuration</h2>
+                    <p>Modify the IPv6 configuration of the management processor. Use comma for multiple entries. Be careful or you may lose access to the device.</p>
+
+                    <p><strong>Current IPv6 Status</strong></p>
+                    <div class="rtable--2cols f2575 valign smaller">
+                        <div>IP</div>
+                        <div class="ns-ipv6">-</div>
+                        <div>Netmask</div>
+                        <div class="ns-netmaskv6">-</div>
+                    </div>
+
+                    <p><strong>Change IPv6 Settings</strong></p>
+                    <form id="ipv6-cfg">
+                        <div class="rtable--2cols valign f2575">
+                            <div>Configuration</div>
+                            <div>
+                                <select name="net-ip6-config">
+                                    <option value="0">Local link only</option>
+                                    <option value="1">Static IP (manual)</option>
+                                    <option value="2">NDP/SLAAC (automatic)</option>
+                                    <option value="3">DHCPv6 (automatic)</option>
+                                </select>
+                            </div>
+                            <div>IPv6 address</div>
+                            <div><input type="text" name="net-ip6-address" /></div>
+                            <div>Gateway</div>
+                            <div><input type="text" name="net-ip6-gateway" /></div>
+                            <div>DNS Domain</div>
+                            <div><input type="text" name="net-i6dns-domain" /></div>
+                            <div>DNS Server</div>
+                            <div><input type="text" name="net-i6dns-server" /></div>
+                        </div>
+                        <button>Apply</button>
+                    </form>
+                </div>
+                <div class="sectiontable">
+                    <h2>Internet time</h2>
+                    <p>Modify the internet time configuration of the management processor. Use comma for multiple server entries.</p>
+
+                    <p><strong>Current time</strong></p>
+                    <div class="ns-date">Unavailable</div>
+
+                    <p><strong>Change NTP settings</strong></p>
+
+                    <form id="ntp-cfg">
+                        <div class="rtable--2cols valign f2575">
+                            <div>NTP Server</div>
+                            <div><input type="text" name="net-ntp" /></div>
+                            <div>Timezone</div>
+                            <div>
+                                <select name="net-timezone">
+                                    <option>-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button>Apply</button>
+                    </form>
+                </div>
+                <div class="sectiontable">
+                    <h2>Reboot</h2>
+
+                    <p>Reboot the management processor. This should not affect PCIe traffic, but it's not recommended to perform in a production environment.
+                    A reboot should complete within 30-60 seconds.</p>
+
+                    <form id="reboot">
+                        <button>Reboot</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p class="center">Copyright (C) 2018 - 2020 Dolphin Interconnect Solutions
+        <br />
+        <a href="/licenses.html">Third party licence information</a></p>
+    </div>
+    <script>
+        main();
+    </script>
+</body>
+</html>

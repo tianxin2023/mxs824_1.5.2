@@ -1,0 +1,9 @@
+auto
+/usr/bin/nodejs
+nodejs.1.gz
+/usr/share/man/man1/nodejs.1.gz
+
+/usr/bin/node
+50
+/usr/share/man/man1/node.1.gz
+

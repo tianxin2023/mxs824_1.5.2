@@ -1,0 +1,7 @@
+/etc
+/etc/X11
+/etc/X11/Xsession.d
+/etc/X11/Xsession.d/90gpg-agent
+/etc/logcheck
+/etc/logcheck/ignore.d.server
+/etc/logcheck/ignore.d.server/gpg-agent

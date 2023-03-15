@@ -1,0 +1,35 @@
+{
+  "name": "mxs824",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Dolphin ICS MXS824 JSON API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MXS824",
+    "Dolphin",
+    "API",
+    "JSON",
+    "Server"
+  ],
+  "author": "Stig Magnus Baugstø",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "argon2": "^0.23.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "max31785etl": "file:../max31785etl",
+    "mtd": "file:../mtd",
+    "multer": "^1.4.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "sanitize-html": "^1.20.1",
+    "seeprom": "file:../seeprom",
+    "stm32bl": "file:../stm32bl",
+    "mrpc": "file:../mrpc"
+  }
+}

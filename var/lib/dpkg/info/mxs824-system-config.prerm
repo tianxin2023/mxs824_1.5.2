@@ -1,0 +1,13 @@
+#!/bin/bash
+
+undivert_config() {
+    SYSCONFIG=$1
+
+    [ -L ${SYSCONFIG} ] && rm ${SYSCONFIG}
+
+    dpkg-divert --remove --package mxs824-system-config --rename --divert \
+        ${SYSCONFIG}.orig ${SYSCONFIG}
+}
+
+undivert_config "/etc/ssh/sshd_config"
+

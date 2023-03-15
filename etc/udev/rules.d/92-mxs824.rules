@@ -1,0 +1,10 @@
+ACTION=="add", KERNEL=="sd*", SUBSYSTEM=="block", ENV{ID_BUS}=="usb", \
+       RUN+="/bin/bash /opt/usb_handler.sh /dev/%k %n"
+
+KERNEL=="spidev0.0" MODE="0660" GROUP="mxs824hw"
+KERNEL=="i2c-0" MODE="0660" GROUP="mxs824hw"
+KERNEL=="mtd0" MODE="0660" GROUP="mxs824hw"
+KERNEL=="mtd0ro" MODE="0440" GROUP="mxs824hw"
+KERNEL=="mtd0ro" MODE="0440" GROUP="mxs824hw"
+
+SUBSYSTEM=="gpio*", PROGRAM="/bin/sh -c 'find -L /sys/class/gpio/ -maxdepth 2 -exec chown root:mxs824hw {} \; -exec chmod 770 {} \; || true'"

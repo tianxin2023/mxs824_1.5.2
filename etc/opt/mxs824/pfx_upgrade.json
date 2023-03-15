@@ -1,0 +1,241 @@
+{
+    "MXS824_NTB_CASCADE_SUB1_30_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB1_30_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB1_30_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB1_30_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB1_30_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB1_60_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB1_60_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB1_60_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB1_60_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB1_60_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB2_30_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB2_30_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB2_30_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB2_30_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB2_30_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB2_60_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB2_60_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB2_60_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB2_60_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB2_60_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB3_30_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB3_30_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB3_30_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB3_30_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB3_30_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB3_60_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB3_60_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB3_60_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB3_60_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB3_60_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB4_30_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB4_30_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB4_30_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB4_30_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB4_30_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB4_60_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB4_60_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB4_60_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB4_60_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB4_60_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB5_30_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB5_30_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB5_30_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB5_30_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB5_30_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB5_60_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB5_60_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB5_60_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB5_60_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB5_60_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB6_30_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB6_30_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB6_30_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB6_30_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB6_30_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_SUB6_60_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_SUB6_60_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_CASCADE_SUB6_60_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_CASCADE_SUB6_60_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_SUB6_60_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_TOP_30_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_TOP_30_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_CASCADE_TOP_30_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_CASCADE_TOP_30_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_TOP_30_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_CASCADE_TOP_60_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_CASCADE_TOP_60_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_CASCADE_TOP_60_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_CASCADE_TOP_60_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_CASCADE_TOP_60_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_DSWITCH_6_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_DSWITCH_6_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_DSWITCH_6_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_DSWITCH_6_PORTS_x16_1GB_BAR2": {
+        "upgrade": [
+            "MXS824_NTB_DSWITCH_6_PORTS_x16_1GB_BAR2_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_DSWITCH_6_PORTS_x16_1GB_BAR2_VER9_image.data"
+    },
+    "MXS824_NTB_DSWITCH_6_PORTS_x16_2GB_BAR2": {
+        "upgrade": [
+            "MXS824_NTB_DSWITCH_6_PORTS_x16_2GB_BAR2_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_DSWITCH_6_PORTS_x16_2GB_BAR2_VER9_image.data"
+    },
+    "MXS824_NTB_DSWITCH_6_PORTS_x16_2_HOSTS_D22": {
+        "upgrade": [],
+        "upgrade_to": "MXS824_NTB_DSWITCH_6_PORTS_x16_2_HOSTS_D22_VER9_image.data"
+    },
+    "MXS824_NTB_DSWITCH_6_PORTS_x16_2_HOSTS_D40": {
+        "upgrade": [],
+        "upgrade_to": "MXS824_NTB_DSWITCH_6_PORTS_x16_2_HOSTS_D40_VER9_image.data"
+    },
+    "MXS824_NTB_DSWITCH_6_PORTS_x16_5_HOSTS_D10000": {
+        "upgrade": [],
+        "upgrade_to": "MXS824_NTB_DSWITCH_6_PORTS_x16_5_HOSTS_D10000_VER9_image.data"
+    },
+    "MXS824_NTB_DUAL_SW1_10_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_DUAL_SW1_10_PORTS_x16_VER5_image.data",
+            "MXS824_NTB_DUAL_SW1_10_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_DUAL_SW1_10_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_DUAL_SW1_10_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_DUAL_SW1_10_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_DUAL_SW1_20_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_DUAL_SW1_20_PORTS_x8_VER5_image.data",
+            "MXS824_NTB_DUAL_SW1_20_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_DUAL_SW1_20_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_DUAL_SW1_20_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_DUAL_SW1_20_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_DUAL_SW2_10_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_DUAL_SW2_10_PORTS_x16_VER5_image.data",
+            "MXS824_NTB_DUAL_SW2_10_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_DUAL_SW2_10_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_DUAL_SW2_10_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_DUAL_SW2_10_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_NTB_DUAL_SW2_20_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_DUAL_SW2_20_PORTS_x8_VER5_image.data",
+            "MXS824_NTB_DUAL_SW2_20_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_DUAL_SW2_20_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_DUAL_SW2_20_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_DUAL_SW2_20_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_SINGLE_12_PORTS_x8": {
+        "upgrade": [
+            "MXS824_NTB_12_PORT_x8_VER2_image.data",
+            "MXS824_NTB_SINGLE_12_PORTS_x8_VER5_image.data",
+            "MXS824_NTB_SINGLE_12_PORTS_x8_VER6_image.data",
+            "MXS824_NTB_SINGLE_12_PORTS_x8_VER7_image.data",
+            "MXS824_NTB_SINGLE_12_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_SINGLE_12_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_NTB_SINGLE_24_PORTS_x4": {
+        "upgrade": [
+            "MXS824_NTB_24_PORT_x4_VER2_image.data",
+            "MXS824_NTB_24_PORT_x4_VER3_image.data",
+            "MXS824_NTB_SINGLE_24_PORTS_x4_VER5_image.data",
+            "MXS824_NTB_SINGLE_24_PORTS_x4_VER6_image.data",
+            "MXS824_NTB_SINGLE_24_PORTS_x4_VER7_image.data",
+            "MXS824_NTB_SINGLE_24_PORTS_x4_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_SINGLE_24_PORTS_x4_VER9_image.data"
+    },
+    "MXS824_NTB_SINGLE_6_PORTS_x16": {
+        "upgrade": [
+            "MXS824_NTB_6_PORT_x16_VER2_image.data",
+            "MXS824_NTB_SINGLE_6_PORTS_x16_VER5_image.data",
+            "MXS824_NTB_SINGLE_6_PORTS_x16_VER6_image.data",
+            "MXS824_NTB_SINGLE_6_PORTS_x16_VER7_image.data",
+            "MXS824_NTB_SINGLE_6_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_NTB_SINGLE_6_PORTS_x16_VER9_image.data"
+    },
+    "MXS824_TRANSP_SINGLE_10_PORTS_x8": {
+        "upgrade": [
+            "MXS824_TRANSP_12_PORT_x8_VER2_image.data",
+            "MXS824_TRANSP_SINGLE_10_PORTS_x8_VER5_image.data",
+            "MXS824_TRANSP_SINGLE_10_PORTS_x8_VER6_image.data",
+            "MXS824_TRANSP_SINGLE_10_PORTS_x8_VER7_image.data",
+            "MXS824_TRANSP_SINGLE_10_PORTS_x8_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_TRANSP_SINGLE_10_PORTS_x8_VER9_image.data"
+    },
+    "MXS824_TRANSP_SINGLE_20_PORTS_x4": {
+        "upgrade": [
+            "MXS824_TRANSP_24_PORT_x4_VER2_image.data",
+            "MXS824_TRANSP_SINGLE_20_PORTS_x4_VER5_image.data",
+            "MXS824_TRANSP_SINGLE_20_PORTS_x4_VER6_image.data",
+            "MXS824_TRANSP_SINGLE_20_PORTS_x4_VER7_image.data",
+            "MXS824_TRANSP_SINGLE_20_PORTS_x4_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_TRANSP_SINGLE_20_PORTS_x4_VER9_image.data"
+    },
+    "MXS824_TRANSP_SINGLE_5_PORTS_x16": {
+        "upgrade": [
+            "MXS824_TRANSP_6_PORT_x16_VER2_image.data",
+            "MXS824_TRANSP_SINGLE_5_PORTS_x16_VER5_image.data",
+            "MXS824_TRANSP_SINGLE_5_PORTS_x16_VER6_image.data",
+            "MXS824_TRANSP_SINGLE_5_PORTS_x16_VER7_image.data",
+            "MXS824_TRANSP_SINGLE_5_PORTS_x16_VER8_image.data"
+        ],
+        "upgrade_to": "MXS824_TRANSP_SINGLE_5_PORTS_x16_VER9_image.data"
+    }
+}

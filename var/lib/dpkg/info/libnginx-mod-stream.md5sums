@@ -1,0 +1,4 @@
+988c356950b700b65677d0c70a0c5099  usr/lib/nginx/modules/ngx_stream_module.so
+8818712f72b94cb015cd9492891e3560  usr/share/doc/libnginx-mod-stream/changelog.Debian.gz
+a3ca7af9f57003b84279a9112d5d8523  usr/share/doc/libnginx-mod-stream/copyright
+031c8ac05a4c512e8685a3211202f32e  usr/share/nginx/modules-available/mod-stream.conf

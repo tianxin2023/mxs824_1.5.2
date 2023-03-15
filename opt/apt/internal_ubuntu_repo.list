@@ -1,0 +1,3 @@
+# This is the full mirrored ubuntu repo.
+deb http://repo.dolphinics.no/apt/mxs824all bionic main
+

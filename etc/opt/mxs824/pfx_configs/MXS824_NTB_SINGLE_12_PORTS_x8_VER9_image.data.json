@@ -1,0 +1,12 @@
+{
+    "description": "Single switch topology for up to 12 hosts with x8 links.",
+    "group": "Standard",
+    "name": "NTB 12 ports x8",
+    "ports": "12",
+    "protected": 1,
+    "speed": 3,
+    "topology": "Single",
+    "type": "NTB",
+    "version": "9",
+    "width": "8"
+}

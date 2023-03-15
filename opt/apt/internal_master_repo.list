@@ -1,0 +1,2 @@
+#This is the repo containing debs from the master branch published internally
+deb http://repo.dolphinics.no/apt/mxs824master bionic main

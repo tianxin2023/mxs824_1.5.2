@@ -1,0 +1,10 @@
+/.
+/etc
+/etc/apt
+/etc/apt/trusted.gpg.d
+/etc/apt/trusted.gpg.d/mxsapt.gpg
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/mxs824-apt-repo
+/usr/share/doc/mxs824-apt-repo/changelog.gz

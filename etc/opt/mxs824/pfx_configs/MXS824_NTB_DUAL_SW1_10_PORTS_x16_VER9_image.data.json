@@ -1,0 +1,12 @@
+{
+    "description": "Switch 1 in a dual-switch topology with up to 10 hosts with x16 links. The backbone between the two switches must be connected using port 1-4",
+    "group": "Standard",
+    "name": "NTB Dual 10 x16 Switch 1",
+    "ports": "10",
+    "protected": 1,
+    "speed": 3,
+    "topology": "Dual",
+    "type": "NTB",
+    "version": "9",
+    "width": "16"
+}

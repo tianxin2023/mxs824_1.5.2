@@ -1,0 +1,12 @@
+{
+    "description": "Transparent topology with 5 x16 downstream ports. Ports 1-4 is the upstream port.",
+    "group": "Standard",
+    "name": "Transparent 1x16 upstream, 5x16 downstream",
+    "ports": "5",
+    "protected": 1,
+    "speed": 3,
+    "topology": "Single",
+    "type": "Transparent",
+    "version": "9",
+    "width": "16"
+}

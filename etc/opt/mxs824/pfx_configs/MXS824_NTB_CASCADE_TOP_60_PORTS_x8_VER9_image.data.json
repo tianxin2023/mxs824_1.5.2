@@ -1,0 +1,12 @@
+{
+    "description": "TOP switch in a cascadable switch topology for up to 60 hosts with x8 host links. All links in the TOP switch are x16 fabric ports to be connected to the Sub-switches. Connect Sub-switch 1 to ports 1-4, Sub-switch 2 to ports 5-8 and so on. Alternatively a host may be connected to one or more of the fabric ports (x16).",
+    "group": "Standard",
+    "name": "NTB cascade 60 ports x8 Top-switch",
+    "ports": "60",
+    "protected": 1,
+    "speed": 3,
+    "topology": "Cascade x8",
+    "type": "NTB",
+    "version": "9",
+    "width": "8"
+}

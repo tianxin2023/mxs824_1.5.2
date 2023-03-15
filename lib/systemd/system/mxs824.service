@@ -1,0 +1,19 @@
+[Unit]
+Description=MXS824 RESTful Node API
+After=mxs824init.service nginx.service
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/opt/mxs824/nodesec
+User=mxs824api
+ExecStart=/usr/bin/nodejs $ARG1 /opt/mxs824/server
+WorkingDirectory=/opt/mxs824
+RuntimeDirectory=mxs824
+RuntimeDirectoryMode=0764
+Restart=always
+RestartSec=500ms
+StartLimitInterval=0
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

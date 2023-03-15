@@ -1,0 +1,122 @@
+#!/bin/sh
+
+
+after_upgrade() {
+    :
+#!/bin/bash
+
+. /opt/deb/mxs824-node-app-deb-helpers.sh
+
+setup_dhcp() {
+    if [ ! -f /etc/systemd/network/20-wired.network ]; then
+        cat > /etc/systemd/network/20-wired.network <<EOF
+[Match]
+Name=eth0
+
+[Network]
+DHCP=ipv4
+LinkLocalAddressing=ipv6
+IPv6AcceptRA=no
+EOF
+
+        # We have to update the config of the node app as well
+        node <<EOF
+var db = require('/opt/mxs824/db/api-config');
+
+setTimeout(function()
+{
+    if (!db.config || !db.config.network || !db.config.network.ip4 ||
+        !db.config.network.ip4.hasOwnProperty('type')) {
+        console.error('bad config retrieved from switch');
+        process.exit(1);
+    }
+
+    db.config.network.ip4.type = 1;
+
+    db.save().then(function()
+    {
+        process.exit(0);
+    }).catch(function(e)
+    {
+        console.error(e);
+        process.exit(1);
+    });
+}, 250);
+EOF
+
+        systemctl enable systemd-networkd
+        systemctl restart systemd-networkd
+    fi
+}
+
+#Default to DHCP for upgrades from older releases
+setup_dhcp
+
+post_install
+
+exit 0
+
+
+}
+
+after_install() {
+    :
+#!/bin/bash
+
+. /opt/deb/mxs824-node-app-deb-helpers.sh
+
+setup_static_ip() {
+    if [ ! -f /etc/systemd/network/20-wired.network ]; then
+        cat > /etc/systemd/network/20-wired.network <<EOF
+[Match]
+Name=eth0
+
+[Network]
+DHCP=no
+LinkLocalAddressing=ipv6
+IPv6AcceptRA=no
+DNS=192.168.1.1
+
+[Address]
+Address=192.168.1.210/24
+
+[Route]
+Gateway=192.168.1.1
+EOF
+        systemctl enable systemd-networkd
+        systemctl restart systemd-networkd
+    fi
+}
+
+#Default to static IP for new installs
+setup_static_ip
+
+post_install
+
+exit 0
+
+
+}
+
+if [ "${1}" = "configure" -a -z "${2}" ] || \
+   [ "${1}" = "abort-remove" ]
+then
+    # "after install" here
+    # "abort-remove" happens when the pre-removal script failed.
+    #   In that case, this script, which should be idemptoent, is run
+    #   to ensure a clean roll-back of the removal.
+    after_install
+elif [ "${1}" = "configure" -a -n "${2}" ]
+then
+    upgradeFromVersion="${2}"
+    # "after upgrade" here
+    # NOTE: This slot is also used when deb packages are removed,
+    # but their config files aren't, but a newer version of the
+    # package is installed later, called "Config-Files" state.
+    # basically, that still looks a _lot_ like an upgrade to me.
+    after_upgrade "${2}"
+elif echo "${1}" | grep -E -q "(abort|fail)"
+then
+    echo "Failed to install before the post-installation script was run." >&2
+    exit 1
+fi
